@@ -56,11 +56,6 @@ vec3 convertHSVToRGB(in float hue, in float saturation, in float lightness) {
     hsv.r = chroma;
     hsv.b = x;
   }
-  //hsv.r = lightness;
-  hsv.r = hueDash/ 6.0;
-  hsv.b = hueDash / 6.0;
-  //hsv.b = chroma;
-  hsv.g = hueDash / 6.0;
 
   return hsv;
 }
@@ -68,18 +63,12 @@ vec3 convertHSVToRGB(in float hue, in float saturation, in float lightness) {
 
 void main()
 {
-    //float x = pow(256.0, gTexCoord0.x - 1.0);
-    float x = pow(10.0, gTexCoord0.x - 1.0);
+    float x = pow(256.0, gTexCoord0.x - 1.0);
     vec4 sample = texture2D(vertexFrequencyData, vec2(x, gTexCoord0.y + vertexYOffset));
-    // The line below makes the spectrogram look 3D and move as peaks 
-    //vec4 newPosition = vec4(gPosition.x, gPosition.y + verticalScale * sample.a, gPosition.z, 1.0);
-    // The following line gives a flat spectrogram
-    vec4 newPosition = vec4(gPosition.x, gPosition.y, gPosition.z, 1.0);
+    vec4 newPosition = vec4(gPosition.x, gPosition.y + verticalScale * sample.a, gPosition.z, 1.0);
     gl_Position = worldViewProjection * newPosition;
-    //gl_Position = worldViewProjection;
     texCoord = gTexCoord0;
 
     float hue = 360.0 - ((newPosition.y / verticalScale) * 360.0);
-    //color = convertHSVToRGB(hue, 1.0, 1.0);
-    color = convertHSVToRGB(hue, hue, hue);
+    color = convertHSVToRGB(hue, 1.0, 1.0);
 }
