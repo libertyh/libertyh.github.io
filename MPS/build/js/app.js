@@ -854,12 +854,6 @@
                 var e = this.gl,
                     n = this.TEXTURE_HEIGHT;
                 if (!this.freqByteData || this.freqByteData.length != this.analyser.frequencyBinCount) {
-                    //for (freqDataBuffer = [], i = 0; i < 12; i++) freqDataBuffer[i] = new Uint8Array(this.analyser.frequencyBinCount);
-                    // strfRequest = new XMLHttpRequest, strfRequest.open("GET", "bin/STRFmatNoEdge50HzAndAboveNormalized.bin", !0), strfRequest.responseType = "arraybuffer", strfRequest.onload = function(e) {}, strfRequest.addEventListener("load", function(e) {
-                    //     for (rawStrfs = new Float32Array(strfRequest.response), channelStrfs = [], c = 0; c < 256; c++)
-                    //         for (channelStrfs[c] = [], t = 0; t < 37; t++)
-                    //             for (channelStrfs[c][t] = new Float32Array(185), f = 0; f < 185; f++) channelStrfs[c][t][f] += rawStrfs[c + 256 * t + 9472 * f]
-                    // }, !1), strfRequest.send(null), gridResponse = new Float32Array(256), freqByteData = new Uint8Array(this.analyser.frequencyBinCount), this.freqByteData = freqByteData, this.texture && (e.deleteTexture(this.texture), this.texture = null);
                     freqDataBuffer = new Uint8Array(185*13);
                     channelStrfs = [];
                     channelStrfsVectorized = [];
@@ -869,21 +863,7 @@
                     freqDataBufferAll = [];
                     allTimeStamps = [];
 
-                    strfRequest = new XMLHttpRequest, strfRequest.open("GET", "bin/STRFmatNoEdge50HzAndAboveDownsampled.bin", !0), strfRequest.responseType = "arraybuffer", strfRequest.onload = function(e) {}, strfRequest.addEventListener("load", function(e) {
-                        for (rawStrfs = new Float32Array(strfRequest.response), c = 0; c < 256; c++){
-                            console.log('reading in strfs from binary');
-                            channelStrfsVectorized[c] = new Float32Array(185*13);
-                            for (t = 0; t < 13; t++){
-                                for ( f = 0; f < 185; f++) {
-                                    channelStrfsVectorized[c][(13-t)*185+f] += rawStrfs[c + 256 * t + 256*13 * f];
-                                }
-                            }
-                        }
-                        
-                    channelStrfsVectorized = Array.from(channelStrfsVectorized);
-                    freqDataBuffer = Array.from(freqDataBuffer);
-
-                    }, !1), strfRequest.send(null), gridResponse = new Float32Array(256), freqByteData = new Uint8Array(this.analyser.frequencyBinCount), this.freqByteData = freqByteData, this.texture && (e.deleteTexture(this.texture), this.texture = null);
+                    }, !1), gridResponse = new Float32Array(256), freqByteData = new Uint8Array(this.analyser.frequencyBinCount), this.freqByteData = freqByteData, this.texture && (e.deleteTexture(this.texture), this.texture = null);
 
                     var r = e.createTexture();
                     this.texture = r, e.bindTexture(e.TEXTURE_2D, r), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_WRAP_S, e.CLAMP_TO_EDGE), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_WRAP_T, e.REPEAT), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_MIN_FILTER, e.LINEAR), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_MAG_FILTER, e.LINEAR);
