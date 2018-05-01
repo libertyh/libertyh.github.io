@@ -913,13 +913,6 @@
                          //    allTimeStamps.push(Date.now());
                          //}
 
-                        resultVector = $M(channelStrfsVectorized).multiply($V(freqDataBuffer));
-                        gridResponse = resultVector.multiply(selectedScaling).elements;
-                        for (c = 0; c < selectedCategory.length; c++) {
-                             channelNum = selectedCategory[c];
-                             gridResponse[channelNum] = Math.max(0.0, gridResponse[channelNum]);//selectedScaling*resultVector.e(channelNum));
-                             console.log(gridResponse);
-                        }
 
                         break;
 
