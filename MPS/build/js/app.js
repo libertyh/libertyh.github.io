@@ -854,12 +854,6 @@
                 var e = this.gl,
                     n = this.TEXTURE_HEIGHT;
                 if (!this.freqByteData || this.freqByteData.length != this.analyser.frequencyBinCount) {
-                    //for (freqDataBuffer = [], i = 0; i < 12; i++) freqDataBuffer[i] = new Uint8Array(this.analyser.frequencyBinCount);
-                    // strfRequest = new XMLHttpRequest, strfRequest.open("GET", "bin/STRFmatNoEdge50HzAndAboveNormalized.bin", !0), strfRequest.responseType = "arraybuffer", strfRequest.onload = function(e) {}, strfRequest.addEventListener("load", function(e) {
-                    //     for (rawStrfs = new Float32Array(strfRequest.response), channelStrfs = [], c = 0; c < 256; c++)
-                    //         for (channelStrfs[c] = [], t = 0; t < 37; t++)
-                    //             for (channelStrfs[c][t] = new Float32Array(185), f = 0; f < 185; f++) channelStrfs[c][t][f] += rawStrfs[c + 256 * t + 9472 * f]
-                    // }, !1), strfRequest.send(null), gridResponse = new Float32Array(256), freqByteData = new Uint8Array(this.analyser.frequencyBinCount), this.freqByteData = freqByteData, this.texture && (e.deleteTexture(this.texture), this.texture = null);
                     freqDataBuffer = new Uint8Array(185*13);
                     channelStrfs = [];
                     channelStrfsVectorized = [];
@@ -869,21 +863,9 @@
                     freqDataBufferAll = [];
                     allTimeStamps = [];
 
-                    strfRequest = new XMLHttpRequest, strfRequest.open("GET", "bin/STRFmatNoEdge50HzAndAboveDownsampled.bin", !0), strfRequest.responseType = "arraybuffer", strfRequest.onload = function(e) {}, strfRequest.addEventListener("load", function(e) {
-                        for (rawStrfs = new Float32Array(strfRequest.response), c = 0; c < 256; c++){
-                            console.log('reading in strfs from binary');
-                            channelStrfsVectorized[c] = new Float32Array(185*13);
-                            for (t = 0; t < 13; t++){
-                                for ( f = 0; f < 185; f++) {
-                                    channelStrfsVectorized[c][(13-t)*185+f] += rawStrfs[c + 256 * t + 256*13 * f];
-                                }
-                            }
-                        }
-                        
-                    channelStrfsVectorized = Array.from(channelStrfsVectorized);
                     freqDataBuffer = Array.from(freqDataBuffer);
 
-                    }, !1), strfRequest.send(null), gridResponse = new Float32Array(256), freqByteData = new Uint8Array(this.analyser.frequencyBinCount), this.freqByteData = freqByteData, this.texture && (e.deleteTexture(this.texture), this.texture = null);
+                    }, !1), freqByteData = new Uint8Array(this.analyser.frequencyBinCount), this.freqByteData = freqByteData, this.texture && (e.deleteTexture(this.texture), this.texture = null);
 
                     var r = e.createTexture();
                     this.texture = r, e.bindTexture(e.TEXTURE_2D, r), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_WRAP_S, e.CLAMP_TO_EDGE), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_WRAP_T, e.REPEAT), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_MIN_FILTER, e.LINEAR), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_MAG_FILTER, e.LINEAR);
@@ -899,50 +881,6 @@
                     case y:
                         this.analyser.smoothingTimeConstant = .75, this.analyser.getByteFrequencyData(freqByteData);
                         break;
-                    case w:
-                    case b:
-                        // var all = [4,5,6,20,21,22,23,36,37,38,39,52,53,54,55,68,69,70,71,72,84,85,86,87,99,100,101,102,115,116,117,127,132,133,143,147,149,150,165,181,196];
-                        // //above is zero indexed
-                        // selectedCategory = all;
-                        // selectedScaling = 0.000001;
-                        // for (this.analyser.smoothingTimeConstant = 0.05,this.analyser.getByteFrequencyData(freqByteData), i = 0; i < 36; i++) freqDataBuffer[i + 1] = freqDataBuffer[i];
-                        // for (freqDataBuffer[0] = freqByteData, c = 0; c < selectedCategory.length; c++) {
-                        //     channelNum = selectedCategory[c];
-                        //     for (gridResponse[channelNum] = 0, t = 0; t < 37; t++)
-                        //         for (f = 0; f < 185; f++) gridResponse[channelNum] += freqDataBuffer[t][f] * channelStrfs[channelNum][t][f];
-                        //             gridResponse[channelNum] = Math.max(0,selectedScaling*gridResponse[channelNum]);//Math.min(1.5,selectedScaling*gridResponse[channelNum]);
-                        // }
-                        // break;
-
-                        //var all = [4,5,6,20,21,22,23,36,37,38,39,52,53,54,55,68,69,70,71,72,84,85,86,87,99,100,101,102,115,116,117,127,132,133,143,147,149,150,165,181,196];
-                        // The electrodes to include
-                        var all = [2,3,4,5,6,7,8,13,14,16,18,19,20,21,22,23,24,25,32,35,36,37,38,39,41,42,46,48,49,51,52,53,54,55,56,59,60,61,62,65,66,67,68,69,70,71,72,76,82,83,84,85,86,87,89,98,99,100,101,102,110,111,114,115,116,117,118,126,127,128,130,131,132,133,134,143,146,147,148,149,150,151,163,164,165,166,169,179,180,181,195,196,197,210,211,212,226,227,228,248,249,250]
-
-                        selectedCategory = all;
-                        selectedScaling = 0.04;
-                        selectedScaling = 0.1;
-                        this.analyser.smoothingTimeConstant = 0.02;
-                        //this.analyser.smoothingTimeConstant = 2.0;
-                        this.analyser.getByteFrequencyData(freqByteData);
-                        
-                        freqDataBuffer = Array.from(freqByteData.slice(0,185)).concat(freqDataBuffer.slice(0,185*12));
-
-                        // if (eval( freqByteData.join('+') ) > 0){
-                        //     freqDataBufferAll.push(freqByteData.slice(0,185));
-                        //     gridResponseBuffer.push(resultVector.elements);
-                         //    allTimeStamps.push(Date.now());
-                         //}
-
-                        resultVector = $M(channelStrfsVectorized).multiply($V(freqDataBuffer));
-                        gridResponse = resultVector.multiply(selectedScaling).elements;
-                        for (c = 0; c < selectedCategory.length; c++) {
-                             channelNum = selectedCategory[c];
-                             gridResponse[channelNum] = Math.max(0.0, gridResponse[channelNum]);//selectedScaling*resultVector.e(channelNum));
-                             console.log(gridResponse);
-                        }
-
-                        break;
-
                     case v:
                         this.analyser.smoothingTimeConstant = .1, this.analyser.getByteTimeDomainData(freqByteData)
                 }
