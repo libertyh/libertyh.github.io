@@ -853,25 +853,6 @@
             }, AnalyserView.prototype.initByteBuffer = function() {
                 var e = this.gl,
                     n = this.TEXTURE_HEIGHT;
-                if (!this.freqByteData || this.freqByteData.length != this.analyser.frequencyBinCount) {
-                    freqDataBuffer = new Uint8Array(185*13);
-                    channelStrfs = [];
-                    channelStrfsVectorized = [];
-
-                    //for debugging purposes
-                    gridResponseBuffer = [];
-                    freqDataBufferAll = [];
-                    allTimeStamps = [];
-
-                    freqDataBuffer = Array.from(freqDataBuffer);
-
-                    }, !1), freqByteData = new Uint8Array(this.analyser.frequencyBinCount), this.freqByteData = freqByteData, this.texture && (e.deleteTexture(this.texture), this.texture = null);
-
-                    var r = e.createTexture();
-                    this.texture = r, e.bindTexture(e.TEXTURE_2D, r), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_WRAP_S, e.CLAMP_TO_EDGE), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_WRAP_T, e.REPEAT), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_MIN_FILTER, e.LINEAR), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_MAG_FILTER, e.LINEAR);
-                    var s = new Uint8Array(freqByteData.length * n);
-                    e.texImage2D(e.TEXTURE_2D, 0, e.ALPHA, freqByteData.length, n, 0, e.ALPHA, e.UNSIGNED_BYTE, s)
-                }
             }, AnalyserView.prototype.setAnalysisType = function(e) {
                 (this.has3DVisualizer || e != b) && (this.analysisType = e)
             }, AnalyserView.prototype.analysisType = function() {
