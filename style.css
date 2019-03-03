@@ -1,0 +1,91 @@
+body {
+
+	font-family: Arial, Helvetica, sans-serif;
+	min-width: 650px;
+	max-width: 900px;
+}
+img {
+	border: 0;
+}
+#Everything {
+	/*background: url(images/colonia_arboles2.jpg) no-repeat;*/
+	margin: 0 auto;
+}
+#nav {
+	position: relative;
+	top: 75px;
+	left: 10px;
+}
+#nav a {
+	text-decoration: none;
+	color: #2e67b2; # blue 
+	/*height: 100%;*/
+	/*display: block;*/
+	font-family: Georgia,"Helvetica Neue Light", Helvetica, Arial, sans-serif;
+	font-size: 30px;
+	/*border: 1px solid #2d67b2;*/
+	padding: 2px;
+	padding-left: 15px;
+	margin: 1.2em;
+}
+#top_nav a {
+	font-size: 18px;
+	color: #2e67b2;
+	font-family: Georgia, "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+}
+#top_nav a:hover {
+	color: #fff;
+	background-color: #2e67b2;
+}
+#top_nav {
+	/*position: relative;*/
+	/*top: 75px;*/
+	border: 1px solid #2e67b2;
+	padding-right: 30px;
+}
+#copyright {
+	width: 100%;
+	float: right;
+	clear: both;
+	font-size: 16px;
+}
+.bigger {
+	font-size: 24px;
+}
+h1, h2, h3 {
+	font-family: Georgia, Times New Roman, Times;
+}
+
+#topsection{
+background: url(images/fleur.jpg) repeat-x;
+height: 190px; /*Height of top section*/
+margin-bottom: 0px;
+}
+
+#topsection img{
+margin-top: 100px;
+}
+
+#topsection h1{
+margin: 0;
+padding-top: 15px;
+}
+
+#contentwrapper{
+float: left;
+width: 100%;
+}
+
+#contentcolumn{
+margin-right: 180px; /*Set right margin to RightColumnWidth*/
+}
+
+#rightcolumn{
+float: left;
+width: 180px; /*Width of right column in pixels*/
+margin-left: -180px; /*Set left margin to -(RightColumnWidth) */
+}
+
+.innertube{
+margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
+}

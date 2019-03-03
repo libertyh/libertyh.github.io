@@ -1,0 +1,11 @@
+body {
+	font-family: Arial, Verdana, sans-serif;
+	max-width: 800px;
+	line-height: 1.5em;
+}
+h1,h2,h3,h4 {
+	font-family: Georgia, Times, serif;
+}
+.left {
+	vertical-align: top;
+}
