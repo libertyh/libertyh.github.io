@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liberty Hamilton | My research</title>
+<link rel="stylesheet" type="text/css" media="all" href="master.css"/>
+<link rel="stylesheet" href="fema.css" type="text/css" />
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 480px), only screen and (max-device-width: 480px)" href="small-device.css" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59112117-1', 'auto');
+    ga('send', 'pageview', location.pathname);
+
+</script>
+</head>
+<body>
+    <div id = "main">
+    <div id="ribbons" style="padding-top: 2px">
+        <div id="cv"><a href="cv.html" style="display:block; height:100%; width:100%;">c.v./resume</a></div>
+        <div id="email"><a href="mailto:liberty.hamilton[at]austin.utexas.edu" style="display:block; height:100%; width:100%;">email me</a></div>
+        <div id="about"><a href="index.html" style="display:block; height:100%; width:100%;">home</a></div>
+    </div>
+    <div id="titlediv">
+    <h1>Liberty Hamilton</h1>
+    </div>
+    <div id ="maincontainer">
+    <hr>    
+        <div id="floatedobj">
+            <img src="images/brain_rect.jpg" alt="Science"/>
+        </div>
+        <div class="txt_subpage">
+            <h2>How does the brain process natural sounds?</h2>
+            <p>My current research is focused on how the brain processes sounds -- in particular, natural speech. In my <a href="#postdoc">postdoc</a>, I use electrocorticography (ECoG) to study how speech is processed in the human brain. In my <a href="#phd">PhD research</a>, I used optogenetics and computational modeling to investigate how interactions between excitatory and inhibitory cells in the auditory cortex influence perception. <a href="#previous">Prior to my PhD</a>, I used functional MRI, structural MRI, and DTI to study changes in the brain associated with schizophrenia, bipolar disorder, and ADHD. More details follow below. You can also check out my <a href="cv.html">CV</a>.</p>
+            <h2><a name="postdoc"></a>My postdoctoral research in neuroscience</h2>
+            <p>In <a href="http://changlab.ucsf.edu">Edward Chang's lab at UC San Francisco</a>, I studied speech perception in the human auditory cortex using ECoG. In particular, I investigated how acoustic and phonetic features are represented across the surface of the superior temporal gyrus (STG), a brain area known to be critical for speech perception.</p>
+            <p>The following video shows the neural response to a natural sentence stimulus - "Yet they thrived on it".  Electrodes on the superior temporal gyrus are colored according to the amplitude of the response at each time point. Darker red indicates a greater response compared to mean baseline activity. The signal plotted here is the Z-scored analytic amplitude of the neural response, bandpassed in the high gamma (70-150 Hz) range, which has been shown to correlate with multi-unit firing of neurons (<a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1000610">Ray and Maunsell 2011</a>).</p>
+	    <p><video controls="true" class="brainvid" preload="auto">
+               <source src="http://www.libertyhamilton.com/videos/YetTheyThrivedOnIt.mp4" type="video/mp4" media="all">
+               <source src="http://www.libertyhamilton.com/videos/YetTheyThrivedOnIt_iPad2.mp4" type="video/mp4" media="all and (min-device-width : 768px) and (max-device-width : 1024px)">
+               <source src="http://www.libertyhamilton.com/videos/YetTheyThrivedOnIt_iphone.mp4" type="video/mp4" media="all and (max-width: 480px)">
+               HTML5 Video is required for the video to play.</video></p>
+	    <p>Leveraging the high spatiotemporal resolution provided by ECoG, my research is focused on how acoustic features are transformed into invariant phonetic and linguistic representations. I apply computational modeling techniques to simultaneous recordings from low level primary auditory cortex and higher order parabelt areas (including the classic "Wernicke's" area in the superior temporal gyrus) to address this question.</p>
+            <p>Below, I include a synopsis of some of the papers I've coauthored describing how speech is processed in the human cortex:</p>
+            <p>(1) Cheung C*, <b>Hamilton LS*</b>, Johnson K, Chang EF (2016). The Auditory Representation of Speech Sounds in Human Motor Cortex. eLife 2016, 5:e12577. <a href="http://dx.doi.org/10.7554/eLife.12577">http://dx.doi.org/10.7554/eLife.12577</a>. *Co-first authors.</p>
+            <ul>
+		<li>This paper delves into an interesting phenomenon that we have observed in our ECoG recordings, where sites in the sensorimotor cortex appear to be active during passive listening, even when no movements are taking place. This phenomenon has also been observed in neuroimaging studies, and has been controversially interpreted to mean that speech sounds are processed as articulatory gestures. This is called the motor theory of speech perception (<a href="http://dx.doi.org/10.1037/h0020279">Liberman et al 1967</a>, <a href="http://dx.doi.org/10.1016/0010-0277(85)90021-6">Liberman and Mattingly 1985</a>). This theory predicts that when we hear a sound such as the consonant ‘b’, the sound activates the same areas of motor cortex as those involved in producing that sound. To test this, we had participants listen to consonant-vowel sounds ("ba", "da", etc.) and say those same sounds while we recorded activity from the superior temporal gyrus and sensorimotor cortex using ECoG. We found that patterns of activity in the motor cortex during speaking clustered according to articulatory features. That is, sounds that used the same articulators, like "ba" and "pa", which both involve closure at the lips, showed similar patterns of neural activity. During listening, however, we saw something quite different.  Instead, we found that neural responses in motor cortex were more similar for sounds with the same manner of articulation, which is an acoustic rather than a motor/articulatory property. This representation appeared similar to, though weaker than, the acoustic representation in the auditory cortex. These results suggest that motor cortex does not contain articulatory representations of perceived actions in speech, but rather, directly represents auditory vocal information.<br/><br/>
+	        <img src="papers/CheungHamilton2016.jpg" class="smallimage"/>
+		</li>
+            </ul>
+            <p>(2) Hullett PW, <b>Hamilton LS</b>, Mesgarani N, Schreiner CE, Chang EF (2016). Human Superior Temporal Gyrus Organization of Spectrotemporal Modulation Tuning Derived from Speech Stimuli. Journal of Neuroscience, 36(6): 2014-2026. <a href="http://www.jneurosci.org/content/36/6/2014.long">doi:10.1523/JNEUROSCI.1779-15.2016</a></p>
+            <ul>
+		<li>In this paper, we investigated how spectral and temporal modulations in speech are represented across the surface of the human auditory cortex. Natural sounds, including speech, are composed of both temporal modulations (for example, repetitive clicks or broadband sounds) and spectral modulations (for example, vowel sounds). We know from previous research that the auditory system appears to be optimized for the spectrotemporal features that appear in the natural environment (for a great overview, see <a href="http://www.nature.com/nrn/journal/v15/n6/full/nrn3731.html">Elie and Theunissen, Nature Reviews Neuroscience 2014</a>). Still, it was not clear how these spectrotemporal modulation features mapped onto the brain's surface, particularly in higher order auditory cortical areas that do not show organized tonotopic representations like those seen in primary auditory cortex. In our study, we played sentences to patients with implanted ECoG grids over the STG, and found that STG exhibits an organized gradient of representation from low spectral/high temporal selectivity in the posterior aspect to high spectral/low temporal selectivity in the anterior part of STG.<br/><br/>
+               <img src="papers/Hullett2016.jpg" class="smallimage"></li>
+            </ul>
+            <h2><a name="phd"></a>My PhD research</h2>
+            <p>During my PhD at UC Berkeley I studied how the brain processes sound from the level of basic properties of neurons to perception.  This took the form of a number of different projects that attempted to answer the following questions:</p>
+            <h2>How do neurons respond to natural and artificial sounds?</h2>
+            <p>Sound is processed by multiple brain structures in a complex pathway starting at the cochlea and moving up through the brain stem to the thalamus and auditory cortex. In the Bao lab, I studied perception in the auditory cortex, the last stage in the auditory pathway. While researchers believe that the brain decomposes sounds into their spectral (pitch) and temporal (time/rhythm) components (as well as loudness and spatial location), these are clearly not the only important features in processing sounds.  For example, neurons in the mouse auditory system may be activated by species-specific vocalizations, but will not respond to a pure tone at the same pitch as the vocalization.  This suggests that pure tones, which are classically used to describe neurons' selectivity to external sounds, may not be an ideal search stimulus, and that neurons are preferentially active when stimuli are behaviorally or ethologically relevant. My PhD research thus addressed how selectivity to natural sounds (vocalizations) differs from selectivity to pure tones.</p>
+            <h2>How do networks of neurons interact in the auditory cortex?</h2>
+            <p>Neurons interact in massively interconnected networks that consist of cells of many different types with many different properties.  In the cerebral cortex, the outer sheet of cells wrapping around the hemispheres of your brain, cells exist in six layers.  </p>
+	<div style="float: left; padding-right: 20px"><img src="images/Cajal_cortex_drawings.png" width="300"/></div>
+	    <p>These drawings by anatomist Santiago Ramon y Cajal, taken from the book "Comparative study of the sensory areas of the human cortex", show this stratification. The relative size and composition of these layers differs somewhat between cortical areas, with sensory cortices (such as auditory and visual areas) exhibiting a larger layer 4, and motor cortex exhibiting a very narrow layer 4 and larger layer 5.</p>
+            <p>Left: Nissl-stained visual cortex of a human adult. Middle: Nissl-stained motor cortex of a human adult. Right: Golgi-stained cortex of a 1 1/2 month old infant.</p>
+	    <p>In my research I investigate how different cells in the layers of auditory cortex communicate with one another using a combination of computational methods and optogenetics.  Optogenetics is a method that allows researchers to identify and control specific types of neurons using laser light. By being able to perturb specific types of cells, we can see what effect this has on the network with great spatial and temporal precision. In 2013, we published a study showing that stimulating inhibitory cells in the auditory cortex enhances feedforward, but not lateral or feedback, functional connectivity across the layers of the auditory cortex. Details are provided here:</p>  
+	    <p><b>Hamilton LS</b>, Sohl-Dickstein J, Huth AG, Carels VM, Deisseroth K, Bao S (2013). Optogenetic Activation of an Inhibitory Network Enhances Feedforward Functional Connectivity in Auditory Cortex.  Neuron 2013 Nov. 20; 80:4 1066-1076. <a href="papers/HamiltonNeuron2013.pdf">Link to PDF.</a></p>
+            <h2>Which physical properties of sound are related to the perception of musical <a title="(the property that allows us to tell apart a flute and a violin playing exactly the same note at the same loudness and duration)" style="text-decoration: none; border-bottom:1px dotted; cursor: help">timbre</a>?</h2>
+            <p>"Timbre" is a property of sound that is often described by a negative definition -- it is all qualities of a sound that are <b>not</b> pitch, loudness, duration, or spatial location.  This definition makes it difficult to describe what physical properties of sound are associated with timbre. Thus, we used multidimensional scaling, discriminant function analysis, and linear regression to relate physical properties of Western orchestral instrument sounds to human perception of differences in timbre. Our results are published in the following paper:
+            </p>
+            <p>Elliott TM, <b>Hamilton LS</b>, Theunissen FE (2013).  Acoustic structure of the five perceptual dimensions of timbre in orchestral instrument tones. Journal of the Acoustical Society of America 133:1 (389-404). <!--<a href="papers/ElliottJASA2013.pdf">[Download PDF]</a>//--></p>
+            <h2><a name="previous"></a>Previous Research</h2>
+            <p>My previous research with <a href="http://users.loni.ucla.edu/~narr/">Katherine Narr</a> at UCLA's <a href="http://www.loni.ucla.edu">Laboratory of NeuroImaging</a> focused on structural and functional deficits in the brains of patients with neurological disorders including schizophrenia, ADHD, bipolar, and depression. This work includes research detailed in the following papers:</p>
+            <p><b>Hamilton LS</b>, Altshuler LL, Townsend J, Bookheimer SY, Phillips OR, Fischer J, Woods RP, Mazziotta JC, Toga AW, Nuechterlein KH, Narr KL. Alterations in functional activation in euthymic bipolar disorder and schizophrenia during a working memory task.  Hum Brain Mapp. 2009 Dec;30(12):3958-69. <a href="papers/HamiltonHBM2009.pdf">[Download PDF]</a></p>
+	    <ul><li>In this paper we had patients with bipolar disorder (who were also euthymic, that is, not experiencing either depressive or manic symptoms), patients with schizophrenia, and healthy controls perform a visual working memory task while in an MRI scanner.  We measured blood-oxygen-level-dependent (BOLD) activity across the whole brain and found that patients with schizophrenia showed significantly lower task-related activation of the dorsolateral prefrontal cortex (DLPFC) compared to healthy controls.  Bipolar patients showed slightly less activation in DLPFC compared to controls, but this difference was not significant.  This suggests that despite similar diagnostic and behavioral features in bipolar and schizophrenia, including deficits in working memory (which in bipolar disorder can persist even during euthymia, when affective symptoms are not present), the way in which these manifest neurally differs between the disorders.</li>
+	    </ul>
+            <p><b>Hamilton LS</b>, Levitt JG, O'Neill J, Alger JR, L&#252;ders E, Phillips OR, Caplan R, Toga AW, McCracken J, Narr KL.  Reduced white matter integrity in attention-deficit hyperactivity disorder.  Neuroreport.  2008 Nov 19;19(17):1705-8. <a href="papers/HamiltonNeuroReport2008.pdf">[Download PDF]</a></p>
+	    <ul>
+		<li>This paper uses diffusion tensor imaging, which measures water diffusion through the brain, to investigate structural changes in the brains of children and adolescents with attention-deficit-hyperactivity disorder (ADHD). We found that ADHD patients showed lower fractional anisotropy (a measure of the directionality of water movement) than controls in the corticospinal tract and superior longitudinal fasciculus, which are white matter tracts related to motor actions and attention.</li>
+            </ul>
+            <p><b>Hamilton LS</b>, Narr KL, L&#252;ders E, Szeszko PR, Thompson PM, Bilder RM, Toga AW (2007).  Asymmetries of cortical thickness: effects of handedness, sex, and schizophrenia.  Neuroreport.  18(14):1427-1431.<a href="papers/HamiltonNeuroReport2007.pdf">[Download PDF]</a></p>
+	    <ul>
+		<li>This paper describes differences in cortical thickness in patients with schizophrenia, and separates effects due to the disease, handedness, and sex. One hypothesis is that disruptions in hemispheric language specialization may underlie schizophrenia (<a href="http://www.ncbi.nlm.nih.gov/pubmed/10719140">Crow, Brain Research Reviews 2000</a>).  Schizophrenia patients show decreased cortical thickness compared to controls, but it is not clear if normal asymmetries are also affected. By examining cortical thickness asymmetries in male and female left- or right-handed patients with schizophrenia, we found that dextrality (which hand is dominant) appears to have a greater influence on the pattern and direction of cortical thickness asymmetries than sex or disease processes.</li>
+	    </ul>
+	
+	    <p>For more information, see the <a href="http://narr.bmap.ucla.edu/">Narr lab website</a>.</p>
+            <p><i>For a full list of publications, see my <a href="cv.html">academic c.v.</a></i></p>
+            	</div>
+            <table align="center" cellspacing=2 cellpadding=2 border=0>
+            <tr align="center">
+                <td><a href="projects.html"><img src="images/FEMAmap_sm.jpg" title="Side projects I've worked on"><br/>Side Projects</a></td>
+                <td><a href="code.html"><img src="images/code_rect_sm.jpg" title="Look at my code"><br/>Code</a></td>
+            </tr>
+            </table>
+    </div>
+    <div id="viztitle"></div>
+    <br/>
+    <hr>
+    <div id="footer">&copy; 2016 Liberty Hamilton. Brain flower drawn by my sister <a href="http://www.wildrosehamilton.com">Wildrose Hamilton</a>.</div>
+</div>
+
+</div>
+</body>
+</html>
